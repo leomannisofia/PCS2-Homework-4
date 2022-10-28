@@ -1,0 +1,6 @@
+def rp(n, k):
+    if n <= 2:
+        return 1
+    else:
+        return rp(n-1, k)+rp(n-2, k)*k
+print(rp(31,4))
