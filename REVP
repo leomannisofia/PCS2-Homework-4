@@ -1,0 +1,11 @@
+from Bio import SeqIO                           
+f=SeqIO.read(r"C:\Users\onthe\Downloads\rosalind_revp.txt", "fasta")
+ssq=str(f.seq)                       
+rsq=str(f.seq.complement())
+for i in range(len(ssq)):                   
+    for j in range(i, len(ssq)):            
+        s=ssq[i:j+1]                    
+        rs=rsq[i:j+1]                
+        if (4<=len(s)) and (len(s)<=12):        
+            if s == rs[::-1]:                
+                print(i+1, len(s))
