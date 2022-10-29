@@ -1,0 +1,13 @@
+import itertools 
+import math
+n=5
+l=[]
+print(math.factorial(n))
+for x in range(n):
+    l.append(x+1)
+p=list(itertools.permutations(l,n))
+for i, j in enumerate(list(p)):                  
+    permutation = ''                                
+    for e in j:                                  
+        permutation += str(e) + ' '              
+    print(permutation)
