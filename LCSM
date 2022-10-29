@@ -1,0 +1,22 @@
+k = open("C:\\Users\\onthe\\Downloads\\rosalind_lcsm.txt").read().split(">")[1:]
+for i in range(len(k)):
+    k[i] = k[i].replace("\n", '')
+    while k[i][0] not in "ACGT":
+        k[i] = k[i][1:]
+srtsq = sorted(k, key=len)     
+ssq = srtsq[0]                   
+csq = srtsq[1:]                   
+motif = ''                               
+for x in range(len(ssq)):          
+    for y in range(x, len(ssq)):   
+        mf = ssq[x:y + 1]           
+        found = False                    
+        for sq in csq:            
+            if mf in sq:                
+                found = True             
+            else:                        
+                found = False            
+                break                    
+        if found and len(mf) > len(motif):
+            motif = mf                   
+print(motif)
